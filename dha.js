@@ -82,7 +82,7 @@ let setting = JSON.parse(fs.readFileSync('./setting.json'))
 owner = setting.owner
 gamewaktu = setting.gamewaktu
 petik = '```'
-fake = '© ℭ𝔯𝔢𝔞𝔱𝔬𝔯 Zero YT7'//GANTI NAMA KAMU BEP
+fake = 'Adelia'//GANTI NAMA KAMU BEP
 ban =[]
 
 // Database
@@ -176,7 +176,7 @@ module.exports = dha = async (dha, mek) => {
 		const from = mek.key.remoteJid
 		const type = Object.keys(mek.message)[0]        
         const cmd = (type === 'conversation' && mek.message.conversation) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text ? mek.message.extendedTextMessage.text : ''.slice(1).trim().split(/ +/).shift().toLowerCase()
-        const prefix = /^[°•π÷×¶∆£¢€¥®™=|~#%^&.?/\\©^z+*,;]/.test(cmd) ? cmd.match(/^[°•π÷×¶∆£¢€¥®™=|~#%^&.?/\\©^z+*,;]/gi) : '!'
+        const prefix = "#"
         body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message[type].caption.startsWith(prefix) ? mek.message[type].caption : (type == 'videoMessage') && mek.message[type].caption.startsWith(prefix) ? mek.message[type].caption : (type == 'extendedTextMessage') && mek.message[type].text.startsWith(prefix) ? mek.message[type].text : (type == 'listResponseMessage') && mek.message[type].singleSelectReply.selectedRowId ? mek.message[type].singleSelectReply.selectedRowId : (type == 'buttonsResponseMessage') && mek.message[type].selectedButtonId ? mek.message[type].selectedButtonId : (type == 'stickerMessage') && (getCmd(mek.message[type].fileSha256.toString('base64')) !== null && getCmd(mek.message[type].fileSha256.toString('base64')) !== undefined) ? getCmd(mek.message[type].fileSha256.toString('base64')) : ""
 		budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
 		const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()		
@@ -244,7 +244,7 @@ module.exports = dha = async (dha, mek) => {
         const gcount = setting.gcount
         
         const listmsg = (from, title, desc, list) => { // ngeread nya pake rowsId, jadi command nya ga keliatan
-            let po = dha.prepareMessageFromContent(from, {"listMessage": {"title": title,"description": desc,"buttonText": "Pilih Disini","footerText": "© ℭ𝔯𝔢𝔞𝔱𝔬𝔯 Zero YT7","listType": "SINGLE_SELECT","sections": list}}, {})
+            let po = dha.prepareMessageFromContent(from, {"listMessage": {"title": title,"description": desc,"buttonText": "Pilih Disini","footerText": "Adelia","listType": "SINGLE_SELECT","sections": list}}, {})
             return dha.relayWAMessage(po, {waitForAck: true})
         }
         
@@ -844,9 +844,8 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 ➤ *Baterai :* ${baterai}%
 
 「 *INFO BOT* 」
-➤ *Nama :* Zero YT7
-➤ *Nomor :* @6285157740529
-➤ *Owner :* Zero YT7
+➤ *Nama :* Adelia
+➤ *Owner :* Marsel hasagu
 ➤ *Aktif :* ${runtime(process.uptime())}
 ➤ *Prefix :* 『> ${prefix} <』
 
@@ -864,14 +863,14 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 ➤ *User :* ${pushname}
 
 *Request fitur?* Ketik ${prefix}owner Ya!
-*Sewa bot?* Chat wa.me/6285157740529`
+*Sewa bot?* Chat wa.me/6285339189356`
                buttons = [{buttonId: `${prefix}command`,buttonText:{displayText: 'ALL MENU'},type:1},{buttonId: `${prefix}rules`,buttonText:{displayText: 'RULES BOT'},type:1},{buttonId:`${prefix}store`,buttonText:{displayText:'SIMPLE BUTTON MENU'},type:1}]
 
                imageMsg = (await dha.prepareMessageMedia(fs.readFileSync(`./media/sherlynn.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./media/sherlynn.jpg`)})).imageMessage
 
                buttonsMessage = {
                contentText: `${menu}`,
-               footerText: '© ℭ𝔯𝔢𝔞𝔱𝔬𝔯 Zero YT7', imageMessage: imageMsg,
+               footerText: 'Adelia', imageMessage: imageMsg,
                buttons: buttons,
                headerType: 4
 }
@@ -889,7 +888,7 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 
                buttonsMessage = {
                contentText: `${rolegtli}`,
-               footerText: '© ℭ𝔯𝔢𝔞𝔱𝔬𝔯 Zero YT7', imageMessage: imageMsg,
+               footerText: 'Adelia', imageMessage: imageMsg,
                buttons: buttons,
                headerType: 4
 }
@@ -907,7 +906,7 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 
                buttonsMessage = {
                contentText: `${rolegtivd}`,
-               footerText: '© ℭ𝔯𝔢𝔞𝔱𝔬𝔯 Zero YT7', imageMessage: imageMsg,
+               footerText: 'Adelia', imageMessage: imageMsg,
                buttons: buttons,
                headerType: 4
 }
@@ -942,7 +941,7 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
                nombor = 1
                startnum = 0
                for (let x of listmenu) {
-               const yy = {title: '© ℭ𝔯𝔢𝔞𝔱𝔬𝔯 Zero YT7 ' + nombor++,
+               const yy = {title: 'Adelia ' + nombor++,
                     rows: [
                        {
                         title: `${listmenuu[startnum++]}`,
@@ -966,14 +965,14 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
                     rows: [
                        {
                         title: `${listmenuu[startnum++]}`,
-                        footerText: '© ℭ𝔯𝔢𝔞𝔱𝔬𝔯 Zero YT7', imageMessage: imageMsg,
+                        footerText: 'Adelia', imageMessage: imageMsg,
                         rowId: `${prefix}${x}`
                       }
                     ]
                    }
                         list.push(yy)
            }
-               listmsg(from, `${ucapanWaktu}`,   `© ℭ𝔯𝔢𝔞𝔱𝔬𝔯 Zero YT7`, list)
+               listmsg(from, `${ucapanWaktu}`,   `Adelia`, list)
                break
 //------------------< Game >------------------- 
         case 'limitgame': 
@@ -1514,9 +1513,9 @@ Ket : Ketik /resetgame , Untuk Mereset Permainan Yg Ada Di Grup!`, text, {contex
 case 'bayar':
 gopeynya = 'https://i.ibb.co/kynNYTh/ganteng.jpg'
 teksnya = `*[ PAYMENT ]*
-*Gopay :* 085157740529
-*Dana :* 08988743499
-*Ovo :* 08988743499
+*Gopay :* 085339189356
+*Dana :* 085339189356
+*Ovo :* 085339189356
 *[ © Creator Zero YT7 ]*`
         dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: ftoko, caption: teksnya })
               break
@@ -1525,7 +1524,7 @@ case 'buttonstik':
               gopeynya = 'https://i.ibb.co/kynNYTh/ganteng.jpg'
               teksnya = `*「MENU STICKER」*
 *Ketik ${prefix}owner, Untuk Request Fitur*
-© ℭ𝔯𝔢𝔞𝔱𝔬𝔯 Zero YT7
+Adelia
 
 *き⃟🦈 ${prefix}attp* _teks_
 *き⃟🦈 ${prefix}ttp* _teks_
@@ -1545,7 +1544,7 @@ case 'buttonstik':
               gopeynya = 'https://i.ibb.co/kynNYTh/ganteng.jpg'
               teksnya = `*「DOWNLOAD MENU」*
 *Ketik ${prefix}owner, Untuk Request Fitur*
-© ℭ𝔯𝔢𝔞𝔱𝔬𝔯 Zero YT7
+Adelia
 
 *き⃟🦈 ${prefix}fbdl*
 *き⃟🦈 ${prefix}igdl*
@@ -1568,14 +1567,14 @@ case 'buttonpen':
               teksnya = `*「NULIS MENU」*
 *き⃟🦈 ${prefix}nulis*
 *Ketik ${prefix}owner, Untuk Request Fitur*
-© ℭ𝔯𝔢𝔞𝔱𝔬𝔯 Zero YT7`
+Adelia`
               dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: ftoko, caption: teksnya })
               break
 case 'buttongame':
               gopeynya = 'https://i.ibb.co/kynNYTh/ganteng.jpg'
               teksnya = `*「GAME MENU」*
 *Ketik ${prefix}owner, Untuk Request Fitur*
-© ℭ𝔯𝔢𝔞𝔱𝔬𝔯 Zero YT7
+Adelia
 
 き⃟🦈 ${prefix}limitgame*
 *き⃟🦈 ${prefix}slot*
@@ -1604,7 +1603,7 @@ case 'buttongc':
               gopeynya = 'https://i.ibb.co/kynNYTh/ganteng.jpg'
               teksnya = `*「GRUP MENU」*
 *Ketik ${prefix}owner, Untuk Request Fitur*
-© ℭ𝔯𝔢𝔞𝔱𝔬𝔯 Zero YT7
+Adelia
 
 *き⃟🦈 ${prefix}groupsetting*
 *き⃟🦈 ${prefix}getbio* _reply_
@@ -1636,7 +1635,7 @@ case 'buttonwibu':
               gopeynya = 'https://i.ibb.co/kynNYTh/ganteng.jpg'
               teksnya = `*「WIBU MENU」*
 *Ketik ${prefix}owner, Untuk Request Fitur*
-© ℭ𝔯𝔢𝔞𝔱𝔬𝔯 Zero YT7
+Adelia
 
 *き⃟🦈 ${prefix}loli*
 *き⃟🦈 ${prefix}manga*
@@ -1668,7 +1667,7 @@ case 'buttonown':
               gopeynya = 'https://i.ibb.co/kynNYTh/ganteng.jpg'
               teksnya = `*「OWNER MENU」*
 *Ketik ${prefix}owner, Untuk Request Fitur*
-© ℭ𝔯𝔢𝔞𝔱𝔬𝔯 Zero YT7
+Adelia
 
 *き⃟🦈️ ${prefix}bc* _teks_
 *き⃟🦈 ${prefix}tobc* _audio_
@@ -3644,7 +3643,7 @@ case 'getvn':
              for (let _ of anu) {
 dha.sendMessage(_.jid, 
 			{"contentText": `*「 Siaran Zero YT7 」*\n© Zero YT7\n*Isi Pesan :* ${body.slice(4)}`,
-			"footerText": '© ℭ𝔯𝔢𝔞𝔱𝔬𝔯 Zero YT7',
+			"footerText": 'Adelia',
 			"buttons": [
 			{"buttonId": `${prefix}menu`,
 			"buttonText": {"displayText": "LIST MENU"
