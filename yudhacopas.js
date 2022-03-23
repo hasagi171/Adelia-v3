@@ -15,16 +15,16 @@ require('./message/group.js')
 nocache('../message/group.js', module => console.log(color('[WATCH]', 'yellow'), color(`'${module}'`, 'yellow'), 'File is updated!'))
 
 const starts = async (dha = new WAConnection()) => {
-	dha.logger.level = 'warn'
-	console.log(color(figlet.textSync('ZERO YT7', {
+	dha.logg
+	console.log(color(figlet.textSync('Adelia', {
 		font: 'Standard',
 		horizontalLayout: 'default',
 		vertivalLayout: 'default',
 		width: 80,
 		whitespaceBreak: false
 	}), 'cyan'))
-	console.log(color('[ SOURCE CODE INI DI RECODE OLEH HRUTZOFFC\nDENGAN AUTHOR ZERO YT7 ]\n\n', 'orange'), color('\n======TERIMAKASIH BANYAK KEPADA======\n•MHANKBARBAR\n•HRUTZOFFC\n•KURRXD\n•NINO\n•IKYADS\n•KurrXd\n•DAPPAUHUY\n•DAN CREATOR BOT LAINNYA', 'yellow'))
-	console.log(color('\n\nSARAN JANGAN DI JUAL ULANG BRO\nKALAU ADA YG MINTA SURUH CHAT SAYA\nWA ZERO YT7 6285157740529', 'pink'))
+	console.log(color('[ SOURCE CODE INI DI RECODE OLEH HRUTZOFFC\nDENGAN AUTHOR Adelia ]\n\n', 'orange'), color('\n======TERIMAKASIH BANYAK KEPADA======\n•MHANKBARBAR\n•HRUTZOFFC\n•KURRXD\n•NINO\n•IKYADS\n•KurrXd\n•DAPPAUHUY\n•DAN CREATOR BOT LAINNYA', 'yellow'))
+	console.log(color('\n\nSARAN JANGAN DI JUAL ULANG BRO\nKALAU ADA YG MINTA SURUH CHAT SAYA\nWA Adelia 6285157740529', 'pink'))
 	console.log(color('\n\n[ SAYA DOAKAN YANG SUBSCRIBE LANCAR, ANTI ERROR PAS RECODE DAN YG TIDAK, YA TAU LAH AKIBAT NYA', 'red'))
 	dha.browserDescription = ["SHERLYNN BOTZ", "Chrome", "3.0.0"];
 
@@ -36,7 +36,7 @@ const starts = async (dha = new WAConnection()) => {
 	// Menghubungkan
 	fs.existsSync(`./${setting.sessionName}.json`) && dha.loadAuthInfo(`./${setting.sessionName}.json`)
 	dha.on('connecting', () => {
-		console.log(color('[ ZERO YT7 ]', 'yellow'), color('PROSES NYAMBUNG...'));
+		console.log(color('[ Adelia ]', 'yellow'), color('PROSES NYAMBUNG...'));
 	})
 const spinner = { 
   "interval": 120,
@@ -89,7 +89,7 @@ const spinner = {
 
 	//connect
 	dha.on('open', () => {
-		console.log(color('[ ZERO YT7 ]', 'yellow'), color('BOT SUDAH AKTIF  SELAMAT MENGGUNAKAN'));
+		console.log(color('[ Adelia ]', 'yellow'), color('BOT SUDAH AKTIF  SELAMAT MENGGUNAKAN'));
 	})
 
 	// session
