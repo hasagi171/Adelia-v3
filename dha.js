@@ -4457,7 +4457,7 @@ case 'quotesdilan':
              reply(`Follow Instagram Owner Ya : https://www.instagram.com/marselhasagi_`)
              break
       case 'grupbot':
-             reply( 'https://chat.whatsapp.com/FN1aoUNRqHXHbpFgm0Ruew')
+             reply( 'https://chat.whatsapp.com/CmwV9o8Lk880lkDJHpEzSe')
              break
       case 'ownermenu':
              dha.sendMessage(from, ownerMenu(prefix), MessageType.text, {quoted: troli})
