@@ -773,18 +773,18 @@ function banChat() {
 	    }
 	
 	    // Auto Read
-        dha.chatRead(from, "read")
+        // dha.chatRead(from, "read")
         //auto vn 
-        await dha.updatePresence(from, Presence.recording)
+        // await dha.updatePresence(from, Presence.recording)
 
        // CMD
         if (isCmd && !isGroup)
 		    atm.addKoinUser(sender, randomNomor(20), _uang)
-            console.log(color('[ PRIV ]'), color(time, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname))
+            console.log(color('[ PRIV ]'), color(time, 'magenta'), color(`${command} [${args.length}]`), 'from', color(pushname))
         
         if (isCmd && isGroup)
             atm.addKoinUser(sender, randomNomor(20), _uang)
-            console.log(color('[ GC ]'), color(time, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname), 'in', color(groupName))
+            console.log(color('[ GC ]'), color(time, 'magenta'), color(`${command} [${args.length}]`), 'from', color(pushname), 'in', color(groupName))
             
 
             switch(command){
@@ -3643,7 +3643,7 @@ case 'getvn':
              } else {
              for (let _ of anu) {
 dha.sendMessage(_.jid, 
-			{"contentText": `*「 Siaran Zero YT7 」*\n© Zero YT7\n*Isi Pesan :* ${body.slice(4)}`,
+			{"contentText": `*「 Siaran Zero YT7 」*\nAdelia\n*Isi Pesan :* ${body.slice(4)}`,
 			"footerText": 'Adelia',
 			"buttons": [
 			{"buttonId": `${prefix}menu`,
@@ -4865,7 +4865,7 @@ console.log('[',color('TEXT','teal'),']',`Message : ${budy} From`, color(pushnam
 	} catch (e) {
     e = String(e)
     if (!e.includes("this.isZero")) {
-	console.log('Message : %s', color(e, 'green'))
+	console.log('Message : %s', color(e, 'red'))
         }
 	}
 }
