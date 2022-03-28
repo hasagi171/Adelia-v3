@@ -4778,13 +4778,6 @@ dha.sendMessage(from, rell, MessageType.sticker, {quoted: mek})
                   }
 
 
-		if (budy.includes(`P`)) {
-
-                  reply(`Pa pe pa pe, Salam gblk`)
-
-                  }
-
-
 		if (budy.includes(`Kontol`)) {
 
                   reply(`_Jangan Toxic anj_`)
