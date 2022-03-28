@@ -535,7 +535,7 @@ module.exports = dha = async (dha, mek) => {
         const ftoko = {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "16505434800@s.whatsapp.net" } : {})},message: {"productMessage": {"product": {"productImage":{"mimetype": "image/jpeg","jpegThumbnail": fs.readFileSync(`./media/sherlynn.jpg`)},"title": `© Zero YT7`,"description": "ℭ𝔯𝔢𝔞𝔱𝔬𝔯 Zero YT7", "currencyCode": "IDR","priceAmount1000": "999999","retailerId": "Zero YT7","productImageCount": 1},"businessOwnerJid": `0@s.whatsapp.net`}}}
 
       // Anti link
-        if (isGroup && isAntiLink && !isOwner && !isGroupAdmins && isBotGroupAdmins){
+        if (isGroup && isAntiLink && !isOwner && s && isBotGroupAdmins){
             if (budy.match(/(https:\/\/chat.whatsapp.com)/gi)) {
                 reply(`*「 GROUP LINK DETECTOR 」*\nSepertinya kamu mengirimkan link grup, maaf kamu akan di kick`)
                 dha.groupRemove(from, [sender])
@@ -560,7 +560,7 @@ function banChat() {
              
         // MUTE
              if (isMuted){
-             if (!isGroupAdmins && !isPremium) return
+             if (s && !isPremium) return
  }
             
               const getWin = (userId) => {
@@ -3709,7 +3709,7 @@ case 'linkgc':
 				dha.sendMessage(from, yeh, text, {quoted: mek})
 				break
             case 'kick':
-             if (!isGroupAdmins) return reply(mess.only.admin)
+             if (s) return reply(mess.only.admin)
              if (!isGroup) return reply(mess.only.group)
              kick(from, mentionUser)
              break
@@ -3726,7 +3726,7 @@ case 'linkgc':
              break
       case 'promote':
              reply('🗿')
-             if (!isGroupAdmins) return reply(mess.only.admin)
+             if (s) return reply(mess.only.admin)
              if (mek.message.extendedTextMessage === null || mek.message.extendedTextMessage === undefined) return;
              if (mek.message.extendedTextMessage.contextInfo.participant === undefined) {
              entah = mek.message.extendedTextMessage.contextInfo.mentionedJid
@@ -3746,7 +3746,7 @@ case 'linkgc':
              break
       case 'demote':
              reply('🗿')
-             if (!isGroupAdmins) return reply(mess.only.admin)
+             if (s) return reply(mess.only.admin)
              if (mek.message.extendedTextMessage === null || mek.message.extendedTextMessage === undefined) return;
              if (mek.message.extendedTextMessage.contextInfo.participant === undefined) {
              entah = mek.message.extendedTextMessage.contextInfo.mentionedJid
@@ -3765,7 +3765,7 @@ case 'linkgc':
 }
              break
        case 'setgrupname':
-              if (!isGroupAdmins) return reply(mess.only.admin)
+              if (s) return reply(mess.only.admin)
               if (!isGroup) return reply(mess.only.group)
               if (!isBotGroupAdmins) return 
               if (args.length == 0) return reply(`Penggunaan ${prefix}setgrupname name`)
@@ -3774,7 +3774,7 @@ case 'linkgc':
              .catch((err) => reply(jsonformat(err)))
               break
        case 'setdesc':
-              if (!isGroupAdmins) return reply(mess.only.admin)
+              if (s) return reply(mess.only.admin)
               if (!isGroup) return reply(mess.only.group)
               if (!isBotGroupAdmins) return reply(mess.only.Badmin)
               if (args.length == 0)  return reply(`Penggunaan ${prefix}setdesc desc`)
@@ -3783,7 +3783,7 @@ case 'linkgc':
              .catch((err) => reply(jsonformat(err)))
               break
        case 'setppgrup':
-              if (!isGroupAdmins) return reply(mess.only.admin)
+              if (s) return reply(mess.only.admin)
               if (!isGroup) return reply(mess.only.group)
               if (!isBotGroupAdmins) return reply(mess.only.Badmin)
               if (isQuotedImage) {
@@ -3835,7 +3835,7 @@ case 'linkgc':
               dha.sendMessage(from, await getBuffer(pic), image, {quoted: mek, caption: ingfo, contextInfo: {"mentionedJid": [groupMetadata.owner.replace('@c.us', '@s.whatsapp.net')]}})
               break
        case 'tagall':
-              if (!isGroupAdmins) return reply(mess.only.admin)
+              if (s) return reply(mess.only.admin)
               if (!isGroup) return reply(mess.only.group)
               let arr = [];
               let txti = `*[ TAG ALL ]*\n\n${q ? q : ''}\n\n`
@@ -3846,16 +3846,16 @@ case 'linkgc':
               mentions(txti, arr, true)
               break
        case 'kickall': // Anti Banned
-              if (!isGroupAdmins) return reply(mess.only.admin)
+              if (s) return reply(mess.only.admin)
               for (let i of groupMembers) {
               await kickMember(from, [i.jid])
 }
               break
        case 'leave':
-              if (!isGroupAdmins) return reply(mess.only.admin)
+              if (s) return reply(mess.only.admin)
               if (!isGroup) return reply(mess.only.group)
               setTimeout( () => {
-              dha.groupLeave(from) 
+             // dha.groupLeave(from) 
               }, 2000)
               setTimeout( () => {
               reply('Byee...')
@@ -3874,7 +3874,7 @@ case 'linkgc':
 }
              break
       case 'hidetag':
-             if (!isGroupAdmins) return reply(mess.only.admin)
+             if (s) return reply(mess.only.admin)
              try {
              quotedText = mek.message.extendedTextMessage.contextInfo.quotedMessage.conversation
              hideTag(from, `${quotedText}`)
@@ -3883,7 +3883,7 @@ case 'linkgc':
 }
              break
       case 'sider':
-             if (!isGroupAdmins) return reply(mess.only.admin)
+             if (s) return reply(mess.only.admin)
              if(!isGroup) return reply(mess.only.group)
              try {
              infom = await dha.messageInfo(from, mek.message.extendedTextMessage.contextInfo.stanzaId)
@@ -4347,7 +4347,7 @@ case 'quotesdilan':
 }
               break
        case 'antilink':
-              if (!isGroupAdmins) return reply(mess.only.admin)
+              if (s) return reply(mess.only.admin)
               if (!isGroup) return reply(mess.only.group)
               if (!isBotGroupAdmins) return reply(`Bot Harus jadi Admin`)
               if (!q) return reply(`Pilih enable atau disable`)
@@ -4366,7 +4366,7 @@ case 'quotesdilan':
 }
               break
        case 'welcome':
-               if (!isGroupAdmins) return reply(mess.only.admin)
+               if (s) return reply(mess.only.admin)
                if (!isGroup) return reply(mess.only.group)
                if (args.length < 1) return reply('!welcome enable/disable')
                if ((args[0]) === 'enable') {
@@ -4384,7 +4384,7 @@ case 'quotesdilan':
                break
         case 'mute':
                if (!isGroup) return reply(mess.only.group)
-               if (!isGroupAdmins) return reply(mess.only.admin)
+               if (s) return reply(mess.only.admin)
                if (args.length < 1) return reply('!mute enable/disable')
                if (args[0].toLowerCase() === 'enable'){
                if (isMuted) return reply(`udah di mute`)
@@ -4403,7 +4403,7 @@ case 'quotesdilan':
         case 'grupsetting':
         case 'groupsetting':
                if (!isGroup) return reply(mess.only.group)
-               if (!isGroupAdmins) return reply(mess.only.admin)
+               if (s) return reply(mess.only.admin)
                list = []
                com = [`group buka`,`leveling enable`,`welcome enable`,`antilink enable`,`mute enable`]
                comm = [`group tutup`,`leveling disable`,`welcome disable`,`antilink disable`,`mute disable`]
@@ -4433,7 +4433,7 @@ case 'quotesdilan':
              break
  		case 'group':
 					if (!isGroup) return reply(ind.groupo())
-					if (!isGroupAdmins) return reply(ind.admin())
+					if (s) return reply(ind.admin())
 					if (!isBotGroupAdmins) return reply(ind.badmin())
 					if (args[0] === 'buka') {
 					    reply(`*BERHASIL MEMBUKA GROUP*`)
