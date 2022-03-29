@@ -1503,8 +1503,8 @@ Ket : Ketik /resetgame , Untuk Mereset Permainan Yg Ada Di Grup!`, text, {contex
               teksnya = `*[ PRICE LIST ]*
 *Sewa Bot Zero YT7 ON 24 Jam*
 *1 Hari :* 2K
-*1 Minggu :* 10K
-*1 Bulan :* 20K
+*1 Minggu :* 5k
+*1 Bulan :* 10k
 *Minat untuk Sewa Bot?* Chat Owner!
 *Dengan cara, Ketik* ${prefix}owner *Ya!*`
               dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: mek, caption: teksnya })
@@ -1516,7 +1516,7 @@ teksnya = `*[ PAYMENT ]*
 *Gopay :* 085339189356
 *Dana :* 085339189356
 *Ovo :* 085339189356
-*[ © Creator Zero YT7 ]*`
+*[ Adelia ]*`
         dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: ftoko, caption: teksnya })
               break
  
@@ -3643,7 +3643,7 @@ case 'getvn':
              } else {
              for (let _ of anu) {
 dha.sendMessage(_.jid, 
-			{"contentText": `*「 Siaran Zero YT7 」*\nAdelia\n*Isi Pesan :* ${body.slice(4)}`,
+			{"contentText": `*「 Adelia Broadcast 」*\nAdelia\n*Isi Pesan :* ${body.slice(4)}`,
 			"footerText": 'Adelia',
 			"buttons": [
 			{"buttonId": `${prefix}menu`,
@@ -4129,7 +4129,7 @@ case 'linkgc':
         case 'info':
         case 'infobot':  // Jangan Di Ubah Plise
                gopeynya = 'https://i.ibb.co/kynNYTh/ganteng.jpg'
-               thankslort = `*[━━━━ INFO BOT ━━━━]*\n*➤ Nama : Zero YT7*\n*➤ Pukul : ${moment().utcOffset('+0700').format('HH:mm')}*\n*➤ Tanggal : ${moment.tz('Asia/Jakarta').format('DD/MM')}*\n*➤ Tipe : Node Js*\n*➤ Version : 3.3*\n*[━━━━━━━━━━━━━━━━━━]*`
+               thankslort = `*[━━━━ INFO BOT ━━━━]*\n*➤ Nama : Adelia*\n*➤ Pukul : ${moment().utcOffset('+0700').format('HH:mm')}*\n*➤ Tanggal : ${moment.tz('Asia/Jakarta').format('DD/MM')}*\n*➤ Tipe : Node Js*\n*➤ Version : 3.3*\n*[━━━━━━━━━━━━━━━━━━]*`
              dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: ftoko, caption: thankslort })
              break
       case 'get':
